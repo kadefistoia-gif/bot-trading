@@ -23,7 +23,6 @@ except:
 
 # Funciones auxiliares
 def get_ohlc(symbol, interval, limit):
-    """Trae velas OHLC desde Binance y devuelve DataFrame"""
     klines = client.get_klines(symbol=symbol, interval=interval, limit=limit)
     df = pd.DataFrame(klines, columns=[
         "open_time","open","high","low","close","volume",
@@ -44,7 +43,6 @@ def compute_rsi(series, period=14):
     return rsi
 
 def find_divergence(df):
-    """Detecta divergencia en RSI en H1 según reglas"""
     rsi = compute_rsi(df["close"], RSI_PERIOD)
     highs_idx = df["close"].iloc[-DIV_LOOKBACK:].idxmax()
     lows_idx = df["close"].iloc[-DIV_LOOKBACK:].idxmin()
@@ -59,7 +57,6 @@ def find_divergence(df):
     return None, None
 
 def compute_position_size(sl_usd):
-    """Calcula cantidad de activo para arriesgar 1%"""
     risk_amount = ACCOUNT_USD * (RISK_PERCENT/100)
     qty = risk_amount / sl_usd
     return qty
@@ -74,9 +71,9 @@ for symbol in ASSETS:
     # pasar a 5m para entrada
     df_5m = get_ohlc(symbol+"USDT", "5m", 50)
     ema = df_5m["close"].ewm(span=EMA_PERIOD).mean()
-    # buscar vela que cierra con EMA dentro
     entry_price = None
     sl_price = None
+
     if signal == "long":
         sl_price = df_h1["low"].iloc[idx_div]
         for i in range(idx_div, len(df_5m)):
@@ -89,27 +86,32 @@ for symbol in ASSETS:
             if df_5m["close"].iloc[i] < ema.iloc[i-1] and df_5m["close"].iloc[i-1] > ema.iloc[i-1]:
                 entry_price = df_5m["close"].iloc[i]
                 break
-    if entry_price is None:
-        continue
 
-    # calcular TP escalonados
-    R = abs(entry_price - sl_price)
-    tps = [entry_price + R*r if signal=="long" else entry_price - R*r for r in SL_TP_RATIOS]
+    trade_exists = any(t.get("activo")==symbol and t.get("status") in ["watching","active"] for t in trades_data)
+    if trade_exists:
+        continue  # solo un trade activo por activo
 
     trade = {
         "time": str(datetime.now()),
         "bot_id": "bot_v1",
         "activo": symbol,
         "signal": signal,
-        "entry": entry_price,
+        "entry": entry_price if entry_price else None,
         "sl": sl_price,
-        "tp": tps,
-        "qty": compute_position_size(R)
+        "tp": [],
+        "qty": 0,
+        "status": "watching" if entry_price is None else "active"
     }
+
+    if entry_price:
+        R = abs(entry_price - sl_price)
+        trade["tp"] = [entry_price + R*r if signal=="long" else entry_price - R*r for r in SL_TP_RATIOS]
+        trade["qty"] = compute_position_size(R)
+
     trades_data.append(trade)
 
-# guardar trades
+# --- Guardar trades ---
 with open(FILE, "w") as f:
     json.dump(trades_data, f, indent=2)
 
-print("Trades calculados y guardados."))
+print("Trades y watchlist actualizados.")
