@@ -12,12 +12,17 @@ if os.path.exists(FILE):
 else:
     data = []
 
+import random
+
+tipo = random.choice(["entry", "tp", "sl", "partial_tp"])
+
 registro = {
     "time": str(datetime.now()),
     "bot_id": BOT_ID,
     "activo": "BTC",
-    "accion": "scan",
-    "precio_fake": 65000
+    "evento": tipo,
+    "precio": random.randint(60000, 70000),
+    "cantidad": 1
 }
 
 data.append(registro)
