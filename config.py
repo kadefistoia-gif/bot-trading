@@ -1,0 +1,12 @@
+# Configuración general del bot
+
+ASSETS = ["BTC", "ETH", "SOL", "ADA", "LTC", "XRP", "XLM", "HYPE", "LINK", "AAVE", "BCH", "SUI"]
+ACCOUNT_USD = 1000
+RISK_PERCENT = 1  # % sobre ACCOUNT_USD
+RSI_PERIOD = 14
+RSI_HIGH = 70
+RSI_LOW = 30
+DIV_LOOKBACK = 25  # velas H1
+EMA_PERIOD = 12
+SL_TP_RATIOS = [1.5, 3, 6, 9]  # TP1, TP2, TP3, TP4
+MAX_HOLD_HOURS = 24
