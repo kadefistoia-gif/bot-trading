@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-bot:
+  run-bots:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,10 +18,15 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run bot
-        - run: python bot.py
-  env:
-    BOT_ID: bot_v1
+      - name: Run bot v1
+        run: python bot.py
+        env:
+          BOT_ID: bot_v1
+
+      - name: Run bot v2
+        run: python bot.py
+        env:
+          BOT_ID: bot_v2
 
       - name: Commit data
         run: |
