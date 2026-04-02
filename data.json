@@ -5,5 +5,12 @@
     "activo": "BTC",
     "accion": "scan",
     "precio_fake": 65000
+  },
+  {
+    "time": "2026-04-02 04:12:15.351388",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "accion": "scan",
+    "precio_fake": 65000
   }
 ]
