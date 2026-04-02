@@ -26,5 +26,21 @@
     "activo": "BTC",
     "accion": "scan",
     "precio_fake": 65000
+  },
+  {
+    "time": "2026-04-02 04:19:16.779466",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "entry",
+    "precio": 65355,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-04-02 04:19:16.814643",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "entry",
+    "precio": 60591,
+    "cantidad": 1
   }
 ]
