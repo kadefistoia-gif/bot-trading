@@ -4746,5 +4746,21 @@
     "evento": "entry",
     "precio": 65460,
     "cantidad": 1
+  },
+  {
+    "time": "2026-04-19 13:41:04.461357",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 64869,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-04-19 13:41:04.501250",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "entry",
+    "precio": 69942,
+    "cantidad": 1
   }
 ]
