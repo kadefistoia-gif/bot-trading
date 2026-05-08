@@ -9642,5 +9642,21 @@
     "evento": "tp",
     "precio": 62265,
     "cantidad": 1
+  },
+  {
+    "time": "2026-05-08 10:52:50.981413",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "tp",
+    "precio": 68309,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-05-08 10:52:51.020979",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "sl",
+    "precio": 69641,
+    "cantidad": 1
   }
 ]
