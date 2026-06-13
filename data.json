@@ -15994,5 +15994,21 @@
     "evento": "sl",
     "precio": 65188,
     "cantidad": 1
+  },
+  {
+    "time": "2026-06-13 15:11:50.615809",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 67062,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-06-13 15:11:50.675235",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "entry",
+    "precio": 61398,
+    "cantidad": 1
   }
 ]
