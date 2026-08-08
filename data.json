@@ -27130,5 +27130,21 @@
     "evento": "sl",
     "precio": 63643,
     "cantidad": 1
+  },
+  {
+    "time": "2026-08-08 12:00:59.337610",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "sl",
+    "precio": 64043,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-08-08 12:00:59.394149",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "sl",
+    "precio": 63883,
+    "cantidad": 1
   }
 ]
