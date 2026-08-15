@@ -29994,5 +29994,21 @@
     "evento": "entry",
     "precio": 61444,
     "cantidad": 1
+  },
+  {
+    "time": "2026-08-15 11:52:26.026768",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 69304,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-08-15 11:52:26.100456",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "tp",
+    "precio": 63121,
+    "cantidad": 1
   }
 ]
