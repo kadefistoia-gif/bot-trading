@@ -35834,5 +35834,21 @@
     "evento": "partial_tp",
     "precio": 60638,
     "cantidad": 1
+  },
+  {
+    "time": "2026-08-24 07:01:49.246558",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 69888,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-08-24 07:01:49.321968",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "tp",
+    "precio": 68122,
+    "cantidad": 1
   }
 ]
