@@ -44586,5 +44586,21 @@
     "evento": "tp",
     "precio": 62171,
     "cantidad": 1
+  },
+  {
+    "time": "2026-11-22 01:57:52.506153",
+    "bot_id": "bot_v1",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 63157,
+    "cantidad": 1
+  },
+  {
+    "time": "2026-11-22 01:57:52.591854",
+    "bot_id": "bot_v2",
+    "activo": "BTC",
+    "evento": "partial_tp",
+    "precio": 64653,
+    "cantidad": 1
   }
 ]
